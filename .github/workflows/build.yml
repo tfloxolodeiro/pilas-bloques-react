@@ -70,6 +70,7 @@ jobs:
           allowUpdates: true
           artifacts: "binaries/*.zip,binaries/*.deb,binaries/*.tar.gz"
           tag: ${{github.ref_name}}-staging
+          prerelease: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
   pack-macos: # When there is a tag, pack the installers and upload to Github.
