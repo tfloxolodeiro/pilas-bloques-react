@@ -44,6 +44,7 @@ jobs:
         - run: npm run build
         - run: npm run pack:linux
         - run: npm run pack:html
+        - run: echo "PEPITA ${{ secrets.API_URL_PROD }}"
         - uses: ncipollo/release-action@v1
           with:
             allowUpdates: true
