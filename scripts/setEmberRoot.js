@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 let indexPath = process.argv[2]
 if(!indexPath) throw "You must pass the ember build folder path as a parameter to this script"
 indexPath += "/index.html"
@@ -24,5 +24,6 @@ fs.writeFileSync(indexPath, newIndex)
 function replaceApiUrl(encodedEnvironment) {
   const environment = JSON.parse(decodeURIComponent(encodedEnvironment))
   environment.rootURL = rootURL
+  environment.pbApi.baseURL = process.env.REACT_APP_API_URL
   return encodeURIComponent(JSON.stringify(environment))
 }
