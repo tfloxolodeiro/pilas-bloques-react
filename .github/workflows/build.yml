@@ -68,7 +68,8 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          artifacts: "binaries/*.zip,binaries/*.deb,binaries/*-staging.tar.gz"
+          artifacts: "binaries/*.zip,binaries/*.deb,binaries/*.tar.gz"
+          tag: "prueba"
           token: ${{ secrets.GITHUB_TOKEN }}
 
   pack-macos: # When there is a tag, pack the installers and upload to Github.
