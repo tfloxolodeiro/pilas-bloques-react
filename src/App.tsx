@@ -63,7 +63,9 @@ function App() {
       path: "/creador/editar",
       element: <CreatorEditor/>
     }
-  ]);
+  ], {
+    basename: "/online"
+  });
 
 
 
